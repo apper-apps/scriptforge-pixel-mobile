@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import Card from "@/components/atoms/Card";
-import Button from "@/components/atoms/Button";
-import Input from "@/components/atoms/Input";
-import Textarea from "@/components/atoms/Textarea";
-import FormField from "@/components/molecules/FormField";
 import ApperIcon from "@/components/ApperIcon";
-import { cn } from "@/utils/cn";
+import FormField from "@/components/molecules/FormField";
+import Card from "@/components/atoms/Card";
+import Textarea from "@/components/atoms/Textarea";
+import Input from "@/components/atoms/Input";
+import Button from "@/components/atoms/Button";
 import { calculateScriptRuntime, getRuntimeStatus } from "@/utils/runtimeCalculator";
+import { cn } from "@/utils/cn";
 
 const ScriptEditor = ({ script, onSave, className }) => {
   const [editedScript, setEditedScript] = useState(script || {});
@@ -138,7 +138,102 @@ const ScriptEditor = ({ script, onSave, className }) => {
     }));
   };
 
-const updateDialogue = (sceneId, dialogueIndex, updates) => {
+// Generate smart character suggestions based on topic and style
+  const getCharacterSuggestions = useMemo(() => {
+    if (!editedScript.topic) return [];
+    
+    const topic = editedScript.topic.toLowerCase();
+    const style = editedScript.style || 'comedy';
+    
+    const contextualCharacters = {
+      detective: ['DETECTIVE', 'SUSPECT', 'WITNESS', 'VICTIM', 'PARTNER', 'INFORMANT'],
+      coffee: ['BARISTA', 'CUSTOMER', 'MANAGER', 'SUPPLIER', 'REGULAR', 'CRITIC'],
+      cooking: ['CHEF', 'SOUS CHEF', 'CUSTOMER', 'FOOD CRITIC', 'SERVER', 'DISHWASHER'],
+      school: ['TEACHER', 'STUDENT', 'PRINCIPAL', 'PARENT', 'JANITOR', 'COUNSELOR'],
+      office: ['MANAGER', 'EMPLOYEE', 'INTERN', 'CLIENT', 'RECEPTIONIST', 'CEO'],
+      medical: ['DOCTOR', 'NURSE', 'PATIENT', 'SURGEON', 'PARAMEDIC', 'SPECIALIST'],
+      space: ['ASTRONAUT', 'MISSION CONTROL', 'ALIEN', 'CAPTAIN', 'ENGINEER', 'PILOT'],
+      robot: ['TECHNICIAN', 'ROBOT', 'SCIENTIST', 'CUSTOMER', 'SECURITY', 'AI'],
+      phone: ['CALLER', 'OPERATOR', 'TECHNICIAN', 'CUSTOMER', 'BOSS', 'STRANGER'],
+      time: ['TIME TRAVELER', 'HISTORIAN', 'SCIENTIST', 'PAST SELF', 'FUTURE SELF', 'GUARDIAN']
+    };
+    
+    // Find matching context
+    let suggestions = ['PROTAGONIST', 'FRIEND', 'STRANGER', 'NARRATOR'];
+    for (const [key, chars] of Object.entries(contextualCharacters)) {
+      if (topic.includes(key) || key.includes(topic.split(' ')[0])) {
+        suggestions = chars;
+        break;
+      }
+    }
+    
+    // Add style-specific characters
+    if (style === 'thriller') {
+      suggestions = [...suggestions, 'MYSTERIOUS VOICE', 'SHADOW FIGURE', 'WHISTLEBLOWER'];
+    } else if (style === 'comedy') {
+      suggestions = [...suggestions, 'COMIC RELIEF', 'STRAIGHT MAN', 'BUMBLING FOOL'];
+    } else if (style === 'educational') {
+      suggestions = [...suggestions, 'EXPERT', 'STUDENT', 'DEMONSTRATOR'];
+    }
+    
+    return [...new Set(suggestions)]; // Remove duplicates
+  }, [editedScript.topic, editedScript.style]);
+
+  // Generate contextual dialogue suggestions
+  const getDialogueSuggestions = (character, topic, style) => {
+    const suggestions = [];
+    
+    if (!character || !topic) return suggestions;
+    
+    const char = character.toUpperCase();
+    const topicLower = topic.toLowerCase();
+    
+    // Character-specific dialogue patterns
+    if (char.includes('DETECTIVE')) {
+      suggestions.push(
+        "Something doesn't add up here.",
+        "I've seen this pattern before.",
+        "The evidence suggests otherwise."
+      );
+    } else if (char.includes('CHEF') || char.includes('COOK')) {
+      suggestions.push(
+        "The secret ingredient is timing.",
+        "This recipe has been in my family for generations.",
+        "Taste is everything in this business."
+      );
+    } else if (char.includes('SCIENTIST') || char.includes('DOCTOR')) {
+      suggestions.push(
+        "The data doesn't support that hypothesis.",
+        "We need to run more tests.",
+        "This could change everything we know."
+      );
+    } else if (char.includes('TEACHER') || char.includes('PROFESSOR')) {
+      suggestions.push(
+        "Let me explain this simply.",
+        "This is a perfect example of what we discussed.",
+        "Does anyone have questions?"
+      );
+    }
+    
+    // Style-specific additions
+    if (style === 'comedy') {
+      suggestions.push(
+        "Well, this is awkward.",
+        "That's not supposed to happen!",
+        "I meant to do that... sort of."
+      );
+    } else if (style === 'thriller') {
+      suggestions.push(
+        "We're being watched.",
+        "Trust no one.",
+        "This goes deeper than we thought."
+      );
+    }
+    
+    return suggestions;
+  };
+
+  const updateDialogue = (sceneId, dialogueIndex, updates) => {
     setEditedScript(prev => ({
       ...prev,
       scenes: prev.scenes?.map(scene => 
@@ -474,12 +569,12 @@ return (
                       />
                     </FormField>
 
-                    {/* Dialogue Lines */}
+{/* Dialogue Lines */}
                     {scene.dialogue?.map((line, index) => (
                       <div key={index} className="border border-primary-600 rounded-lg p-3 space-y-2">
                         <div className="grid grid-cols-2 gap-2">
                           <FormField label="Character">
-<div className="relative">
+                            <div className="relative">
                               <Input
                                 value={line.character || ""}
                                 onChange={(e) => updateDialogue(scene.id, index, { character: formatCharacterName(e.target.value) })}
@@ -487,6 +582,9 @@ return (
                                 list={`characters-${scene.id}-${index}`}
                               />
                               <datalist id={`characters-${scene.id}-${index}`}>
+                                {getCharacterSuggestions.map(char => (
+                                  <option key={char} value={char} />
+                                ))}
                                 {allCharacters.map(char => (
                                   <option key={char} value={char} />
                                 ))}
@@ -501,26 +599,42 @@ return (
                             />
                           </FormField>
                         </div>
-<div className="flex items-center justify-between">
-                          <FormField label="Dialogue" className="flex-1">
-                            <Textarea
-                              value={line.text || ""}
-                              onChange={(e) => updateDialogue(scene.id, index, { text: e.target.value })}
-                              placeholder="Character dialogue"
-                              rows={2}
-                            />
-                          </FormField>
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex-1 space-y-2">
+                            <FormField label="Dialogue">
+                              <Textarea
+                                value={line.text || ""}
+                                onChange={(e) => updateDialogue(scene.id, index, { text: e.target.value })}
+                                placeholder={`What would ${line.character || 'this character'} say in this situation?`}
+                                rows={2}
+                              />
+                            </FormField>
+                            {line.character && editedScript.topic && (
+                              <div className="text-xs text-primary-600">
+                                <span className="font-medium">Suggestions: </span>
+                                {getDialogueSuggestions(line.character, editedScript.topic, editedScript.style).slice(0, 2).map((suggestion, idx) => (
+                                  <button
+                                    key={idx}
+                                    onClick={() => updateDialogue(scene.id, index, { text: suggestion })}
+                                    className="mr-2 underline hover:text-accent-600 cursor-pointer"
+                                  >
+                                    "{suggestion}"
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
                           <Button
                             variant="ghost"
                             size="sm"
                             onClick={() => deleteDialogueLine(scene.id, index)}
-                            className="ml-2 text-red-600"
+                            className="mt-6 text-red-600"
                           >
                             <ApperIcon name="Trash2" size={14} />
                           </Button>
                         </div>
                       </div>
-))}
+                    ))}
                     
                     <div className="flex items-center gap-2 pt-2 border-t border-primary-200">
                       <Button
