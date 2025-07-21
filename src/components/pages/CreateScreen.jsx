@@ -53,8 +53,8 @@ const CreateScreen = () => {
     );
   }
 
-  return (
-    <div className="min-h-[calc(100vh-73px)] bg-gradient-to-br from-background via-primary-900 to-background">
+return (
+    <div className="min-h-[calc(100vh-73px)] bg-gradient-to-br from-background via-primary-100 to-background">
       <div className="container mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,16 +71,16 @@ const CreateScreen = () => {
               <ApperIcon name="Clapperboard" size={48} className="text-white" />
             </motion.div>
             
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-paper mb-4">
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-primary-900 mb-4">
               Create Your Story
             </h1>
-            <p className="text-lg text-primary-300 max-w-lg mx-auto">
+            <p className="text-lg text-primary-600 max-w-lg mx-auto">
               Transform any topic into a professional 2-minute screenplay with AI-powered story generation
             </p>
           </div>
 
-          {/* Form */}
-          <Card className="p-8 bg-surface/50 backdrop-blur-sm border-primary-600">
+{/* Form */}
+          <Card className="p-8 bg-surface/80 backdrop-blur-sm border-primary-300">
             <div className="space-y-6">
               <FormField 
                 label="What's your story about?" 
@@ -94,7 +94,7 @@ const CreateScreen = () => {
                   className="text-lg py-3"
                   autoFocus
                 />
-                <p className="text-sm text-primary-400 mt-2">
+                <p className="text-sm text-primary-600 mt-2">
                   Be specific for better results. Try "robot barista malfunction" instead of just "robots"
                 </p>
               </FormField>
@@ -144,13 +144,13 @@ const CreateScreen = () => {
                 description: "Customize every line after generation"
               }
             ].map((tip, index) => (
-              <Card key={index} className="p-4 text-center border-primary-700 hover:border-accent-500/50 transition-colors">
+<Card key={index} className="p-4 text-center border-primary-200 hover:border-accent-500/50 transition-colors">
                 <div className="flex flex-col items-center space-y-2">
                   <div className="p-2 bg-accent-500/10 rounded-lg">
                     <ApperIcon name={tip.icon} size={20} className="text-accent-500" />
                   </div>
-                  <h3 className="font-medium text-paper">{tip.title}</h3>
-                  <p className="text-sm text-primary-400">{tip.description}</p>
+                  <h3 className="font-medium text-primary-900">{tip.title}</h3>
+                  <p className="text-sm text-primary-600">{tip.description}</p>
                 </div>
               </Card>
             ))}

@@ -23,18 +23,18 @@ const MobileSidebar = ({ isOpen, onClose }) => {
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed left-0 top-0 bottom-0 w-64 bg-surface border-r border-primary-700 z-50 lg:hidden flex flex-col"
+transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed left-0 top-0 bottom-0 w-64 bg-surface border-r border-primary-200 z-50 lg:hidden flex flex-col"
           >
             {/* Header */}
-            <div className="p-6 border-b border-primary-700 flex items-center justify-between">
+            <div className="p-6 border-b border-primary-200 flex items-center justify-between">
               <Link to="/" className="flex items-center space-x-3" onClick={onClose}>
                 <div className="p-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-lg">
                   <ApperIcon name="Film" size={20} className="text-white" />
                 </div>
                 <div>
-                  <h1 className="text-lg font-display font-bold text-paper">ScriptForge</h1>
-                  <p className="text-xs text-primary-400">AI Story Builder</p>
+                  <h1 className="text-lg font-display font-bold text-primary-900">ScriptForge</h1>
+                  <p className="text-xs text-primary-600">AI Story Builder</p>
                 </div>
               </Link>
               <button
@@ -52,14 +52,14 @@ const MobileSidebar = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Footer */}
-            <div className="p-6 border-t border-primary-700">
+{/* Footer */}
+            <div className="p-6 border-t border-primary-200">
               <div className="bg-gradient-to-r from-accent-500/10 to-accent-600/10 border border-accent-500/20 rounded-lg p-4">
                 <div className="flex items-center space-x-2 mb-2">
                   <ApperIcon name="Lightbulb" size={16} className="text-accent-500" />
-                  <span className="text-sm font-medium text-paper">Pro Tip</span>
+                  <span className="text-sm font-medium text-primary-900">Pro Tip</span>
                 </div>
-                <p className="text-xs text-primary-300">
+                <p className="text-xs text-primary-600">
                   Use specific topics for better AI-generated scripts.
                 </p>
               </div>

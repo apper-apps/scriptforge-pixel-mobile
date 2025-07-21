@@ -16,7 +16,7 @@ const ScreenplayViewer = ({ script, className }) => {
   const runtimeData = calculateScriptRuntime(script);
 
 return (
-    <Card className={cn("bg-paper text-primary-900", className)}>
+    <Card className={cn("bg-white text-primary-900 border border-primary-200", className)}>
       <div className="p-8 screenplay-format">
         {/* Title Page */}
         <div className="text-center mb-12">

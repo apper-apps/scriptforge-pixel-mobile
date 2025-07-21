@@ -17,15 +17,15 @@ const Empty = ({
       animate={{ opacity: 1, scale: 1 }}
       className="flex items-center justify-center min-h-[400px]"
     >
-      <Card className="p-8 text-center max-w-md mx-auto">
+<Card className="p-8 text-center max-w-md mx-auto">
         <div className="flex flex-col items-center space-y-6">
-          <div className="p-6 bg-gradient-to-br from-accent-500/10 to-accent-600/10 rounded-full border border-accent-500/20">
+          <div className="p-6 bg-gradient-to-br from-accent-500/20 to-accent-600/20 rounded-full border border-accent-500/30">
             <ApperIcon name={icon} size={48} className="text-accent-500" />
           </div>
           
           <div className="space-y-2">
-            <h3 className="text-xl font-display font-bold text-paper">{title}</h3>
-            <p className="text-primary-300">{message}</p>
+            <h3 className="text-xl font-display font-bold text-primary-900">{title}</h3>
+            <p className="text-primary-600">{message}</p>
           </div>
           
           {onAction && (

@@ -102,11 +102,11 @@ const LibraryScreen = () => {
     <div className="p-6">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8">
-        <div>
-          <h1 className="text-3xl font-display font-bold text-paper mb-2">
+<div>
+          <h1 className="text-3xl font-display font-bold text-primary-900 mb-2">
             Script Library
           </h1>
-          <p className="text-primary-300">
+          <p className="text-primary-600">
             Manage and organize your AI-generated scripts
           </p>
         </div>
@@ -217,22 +217,21 @@ const LibraryScreen = () => {
                         </button>
                       </div>
                     </div>
-                    
-                    <h3 className="text-lg font-display font-bold text-paper mb-2 line-clamp-2">
+<h3 className="text-lg font-display font-bold text-primary-900 mb-2 line-clamp-2">
                       {script.title}
                     </h3>
                     
-                    <p className="text-primary-300 text-sm mb-4 line-clamp-3">
+                    <p className="text-primary-600 text-sm mb-4 line-clamp-3">
                       {script.topic}
                     </p>
                     
-                    <div className="flex items-center justify-between text-xs text-primary-400">
+                    <div className="flex items-center justify-between text-xs text-primary-600">
                       <span className="capitalize">{script.style}</span>
                       <span>{script.runtime}s</span>
                     </div>
                     
-                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-primary-700">
-                      <span className="text-xs text-primary-400">
+                    <div className="flex items-center justify-between mt-3 pt-3 border-t border-primary-200">
+                      <span className="text-xs text-primary-600">
                         {format(new Date(script.createdAt), "MMM d, yyyy")}
                       </span>
                       <Button
