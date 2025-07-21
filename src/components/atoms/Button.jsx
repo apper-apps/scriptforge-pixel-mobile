@@ -8,9 +8,9 @@ const Button = React.forwardRef(({
   children, 
   ...props 
 }, ref) => {
-  const variants = {
+const variants = {
     default: "bg-accent-500 hover:bg-accent-600 text-white border-accent-500",
-    secondary: "bg-surface hover:bg-primary-700 text-paper border-primary-600",
+    secondary: "bg-surface hover:bg-primary-100 text-paper border-primary-300",
     outline: "border-2 border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white bg-transparent",
     ghost: "hover:bg-surface text-paper border-transparent",
     danger: "bg-red-500 hover:bg-red-600 text-white border-red-500"
@@ -23,9 +23,9 @@ const Button = React.forwardRef(({
   };
 
   return (
-    <button
+<button
       className={cn(
-        "inline-flex items-center justify-center rounded-md border font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:pointer-events-none hover:scale-105 shadow-elevation hover:shadow-elevation-hover",
+        "inline-flex items-center justify-center rounded-md border font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:pointer-events-none hover:scale-105 shadow-elevation hover:shadow-elevation-hover",
         variants[variant],
         sizes[size],
         className
