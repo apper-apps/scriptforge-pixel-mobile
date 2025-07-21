@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "title": "The Coffee Shop Mystery",
+    "topic": "A detective solves a mystery in a coffee shop",
+    "style": "thriller",
+    "story": "Detective Sarah Chen walks into The Daily Grind, her usual morning haunt, only to find the barista acting strangely nervous. When she orders her regular coffee, she notices the barista's hands shaking and catches a glimpse of a threatening note behind the register. As she investigates subtly, she discovers that the coffee shop has become the center of a sophisticated money laundering operation. The barista, Marcus, has been forced to participate after receiving threats against his family. Sarah must use her skills to expose the criminals while protecting Marcus and his loved ones, all while pretending to be just another customer enjoying her morning coffee.",
+    "scenes": [
+      {
+        "id": "scene-1",
+        "number": 1,
+        "heading": "INT. THE DAILY GRIND - MORNING",
+        "action": "A cozy coffee shop bustling with morning customers. Detective SARAH CHEN (35, sharp-eyed) enters, scanning the room with practiced observation.",
+        "dialogue": [
+          {
+            "character": "SARAH",
+            "text": "Morning, Marcus. The usual, please.",
+            "parenthetical": ""
+          }
+        ],
+        "cameraNotes": ["Establish coffee shop atmosphere", "Close-up on Sarah's observant eyes"]
+      },
+      {
+        "id": "scene-2",
+        "number": 2,
+        "heading": "INT. COFFEE SHOP - CONTINUOUS",
+        "action": "MARCUS (22, nervous) fumbles with the coffee machine. His hands shake as he reaches for Sarah's usual order.",
+        "dialogue": [
+          {
+            "character": "MARCUS",
+            "text": "Actually, we're... we're out of your usual blend.",
+            "parenthetical": "avoiding eye contact"
+          }
+        ],
+        "cameraNotes": ["Medium shot of Marcus at counter", "Focus on shaking hands"]
+      }
+    ],
+    "createdAt": "2024-01-15T08:30:00Z",
+    "updatedAt": "2024-01-15T08:30:00Z",
+    "runtime": 120
+  },
+  {
+    "Id": 2,
+    "title": "Cooking Class Chaos",
+    "topic": "A cooking class goes hilariously wrong",
+    "style": "comedy",
+    "story": "Chef Antoine, a pretentious French chef, is teaching a beginner's cooking class to a group of enthusiastic but completely incompetent students. What starts as a simple pasta-making lesson quickly descends into complete chaos when one student mistakes salt for sugar, another sets the oven on fire, and a third somehow manages to get pasta sauce on the ceiling. As Antoine tries desperately to maintain his composure and salvage the lesson, the students continue to create increasingly ridiculous disasters. Despite the mayhem, everyone ends up having a wonderful time and bonding over their shared culinary catastrophes.",
+    "scenes": [
+      {
+        "id": "scene-1",
+        "number": 1,
+        "heading": "INT. COOKING STUDIO - DAY",
+        "action": "A pristine cooking studio. CHEF ANTOINE (45, mustache, very French) stands before five eager STUDENTS wearing aprons.",
+        "dialogue": [
+          {
+            "character": "CHEF ANTOINE",
+            "text": "Today, we will create ze perfect pasta. Eet ees simple, no?",
+            "parenthetical": "with supreme confidence"
+          }
+        ],
+        "cameraNotes": ["Wide shot of pristine kitchen", "Focus on Antoine's confident expression"]
+      },
+      {
+        "id": "scene-3",
+        "number": 3,
+        "heading": "INT. COOKING STUDIO - LATER",
+        "action": "The kitchen is now a disaster zone. Flour everywhere, smoke billowing from the oven, pasta sauce dripping from the ceiling.",
+        "dialogue": [
+          {
+            "character": "CHEF ANTOINE",
+            "text": "Mon Dieu! What 'ave you done to my beautiful kitchen?!",
+            "parenthetical": "horrified, French accent thickening"
+          }
+        ],
+        "cameraNotes": ["Wide shot showing chaos", "Close-up on Antoine's shocked face"]
+      }
+    ],
+    "createdAt": "2024-01-14T14:22:00Z",
+    "updatedAt": "2024-01-14T14:22:00Z",
+    "runtime": 115
+  }
+]
