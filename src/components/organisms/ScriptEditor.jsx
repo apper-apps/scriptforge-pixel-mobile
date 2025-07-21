@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import Card from "@/components/atoms/Card";
 import Button from "@/components/atoms/Button";
@@ -7,11 +7,21 @@ import Textarea from "@/components/atoms/Textarea";
 import FormField from "@/components/molecules/FormField";
 import ApperIcon from "@/components/ApperIcon";
 import { cn } from "@/utils/cn";
+import { calculateScriptRuntime, getRuntimeStatus } from "@/utils/runtimeCalculator";
 
 const ScriptEditor = ({ script, onSave, className }) => {
   const [editedScript, setEditedScript] = useState(script || {});
   const [editingScene, setEditingScene] = useState(null);
   const [saving, setSaving] = useState(false);
+
+  // Calculate runtime in real-time
+  const runtimeData = useMemo(() => {
+    return calculateScriptRuntime(editedScript);
+  }, [editedScript]);
+
+  const runtimeStatus = useMemo(() => {
+    return getRuntimeStatus(runtimeData.total);
+  }, [runtimeData.total]);
 
   useEffect(() => {
     setEditedScript(script || {});
@@ -66,10 +76,32 @@ const ScriptEditor = ({ script, onSave, className }) => {
     );
   }
 
-  return (
+return (
     <Card className={cn("", className)}>
       <div className="p-6 border-b border-primary-700 flex items-center justify-between">
-        <h2 className="text-lg font-display font-bold text-paper">Script Editor</h2>
+        <div className="flex items-center gap-4">
+          <h2 className="text-lg font-display font-bold text-paper">Script Editor</h2>
+          <div className="flex items-center gap-2 px-3 py-1 bg-primary-800 rounded-md">
+            <ApperIcon name="Clock" size={14} className="text-primary-300" />
+            <span className="text-sm text-primary-300">Runtime:</span>
+            <span className={cn("text-sm font-mono font-medium", runtimeStatus.color)}>
+              {runtimeStatus.formatted}
+            </span>
+            <span className="text-xs text-primary-400">({runtimeData.total}s)</span>
+          </div>
+          {runtimeStatus.message !== 'Good length' && (
+            <div className="flex items-center gap-1">
+              <ApperIcon 
+                name={runtimeStatus.status.includes('short') ? "AlertTriangle" : "AlertCircle"} 
+                size={14} 
+                className={runtimeStatus.color} 
+              />
+              <span className={cn("text-xs", runtimeStatus.color)}>
+                {runtimeStatus.message}
+              </span>
+            </div>
+          )}
+        </div>
         <Button onClick={handleSave} disabled={saving}>
           {saving ? (
             <>
@@ -90,7 +122,6 @@ const ScriptEditor = ({ script, onSave, className }) => {
           )}
         </Button>
       </div>
-
       <div className="p-6 space-y-6 max-h-[600px] overflow-y-auto">
         {/* Basic Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

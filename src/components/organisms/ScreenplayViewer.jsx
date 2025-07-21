@@ -1,6 +1,7 @@
 import React from "react";
 import { cn } from "@/utils/cn";
 import Card from "@/components/atoms/Card";
+import { calculateScriptRuntime } from "@/utils/runtimeCalculator";
 
 const ScreenplayViewer = ({ script, className }) => {
   if (!script) {
@@ -11,7 +12,10 @@ const ScreenplayViewer = ({ script, className }) => {
     );
   }
 
-  return (
+  // Calculate real-time runtime
+  const runtimeData = calculateScriptRuntime(script);
+
+return (
     <Card className={cn("bg-paper text-primary-900", className)}>
       <div className="p-8 screenplay-format">
         {/* Title Page */}
@@ -20,7 +24,8 @@ const ScreenplayViewer = ({ script, className }) => {
           <p className="text-sm">Written by ScriptForge AI</p>
           <p className="text-sm">Based on: {script.topic}</p>
           <p className="text-sm">Style: {script.style}</p>
-          <p className="text-sm">Runtime: ~{script.runtime} seconds</p>
+          <p className="text-sm">Runtime: ~{runtimeData.total} seconds ({Math.floor(runtimeData.total / 60)}:{(runtimeData.total % 60).toString().padStart(2, '0')})</p>
+          <p className="text-xs text-primary-600">Dialogue: {runtimeData.dialogue}s | Action: {runtimeData.action}s | Transitions: {runtimeData.transitions}s</p>
         </div>
 
         {/* Story Synopsis */}
