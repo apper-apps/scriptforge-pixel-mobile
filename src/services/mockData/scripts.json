@@ -4,79 +4,233 @@
     "title": "The Coffee Shop Mystery",
     "topic": "A detective solves a mystery in a coffee shop",
     "style": "thriller",
+    "writer": "ScriptForge AI",
+    "draft": "First Draft",
+    "notes": "Focus on tension building and character development. Consider adding more visual cues for the money laundering operation.",
     "story": "Detective Sarah Chen walks into The Daily Grind, her usual morning haunt, only to find the barista acting strangely nervous. When she orders her regular coffee, she notices the barista's hands shaking and catches a glimpse of a threatening note behind the register. As she investigates subtly, she discovers that the coffee shop has become the center of a sophisticated money laundering operation. The barista, Marcus, has been forced to participate after receiving threats against his family. Sarah must use her skills to expose the criminals while protecting Marcus and his loved ones, all while pretending to be just another customer enjoying her morning coffee.",
     "scenes": [
       {
         "id": "scene-1",
         "number": 1,
         "heading": "INT. THE DAILY GRIND - MORNING",
-        "action": "A cozy coffee shop bustling with morning customers. Detective SARAH CHEN (35, sharp-eyed) enters, scanning the room with practiced observation.",
+        "action": "A cozy coffee shop bustling with morning customers. Exposed brick walls, vintage coffee posters, and the warm aroma of freshly ground beans. Detective SARAH CHEN (35, sharp-eyed, professional) enters wearing a dark coat. She pauses at the entrance, her trained eyes scanning the room with practiced observation. The morning rush creates perfect cover for surveillance.",
         "dialogue": [
           {
             "character": "SARAH",
             "text": "Morning, Marcus. The usual, please.",
-            "parenthetical": ""
+            "parenthetical": "casual, but watching his reaction"
+          },
+          {
+            "character": "CUSTOMER",
+            "text": "Excuse me, is this the line?",
+            "parenthetical": "interrupting"
           }
         ],
-        "cameraNotes": ["Establish coffee shop atmosphere", "Close-up on Sarah's observant eyes"]
+        "cameraNotes": [
+          "Establish shot of coffee shop atmosphere with morning crowd",
+          "Close-up on Sarah's observant eyes as she enters",
+          "Medium shot following Sarah to counter",
+          "Insert shot of cash register area"
+        ]
       },
       {
         "id": "scene-2",
         "number": 2,
         "heading": "INT. COFFEE SHOP - CONTINUOUS",
-        "action": "MARCUS (22, nervous) fumbles with the coffee machine. His hands shake as he reaches for Sarah's usual order.",
+        "action": "MARCUS (22, nervous, college-aged) fumbles with the coffee machine behind the counter. His hands visibly shake as he reaches for Sarah's usual order. A crumpled piece of paper sticks out from under the register. Sweat beads on his forehead despite the cool morning air.",
         "dialogue": [
           {
             "character": "MARCUS",
             "text": "Actually, we're... we're out of your usual blend.",
-            "parenthetical": "avoiding eye contact"
+            "parenthetical": "avoiding eye contact, voice trembling"
+          },
+          {
+            "character": "SARAH",
+            "text": "That's unusual. You've never been out before.",
+            "parenthetical": "studying his face"
+          },
+          {
+            "character": "MARCUS",
+            "text": "Yeah, well... supply issues, you know?",
+            "parenthetical": "glancing toward the back room"
           }
         ],
-        "cameraNotes": ["Medium shot of Marcus at counter", "Focus on shaking hands"]
+        "cameraNotes": [
+          "Medium shot of Marcus at counter showing nervous behavior",
+          "Close-up on shaking hands handling coffee equipment",
+          "Over-shoulder shot from Sarah's POV of crumpled note",
+          "Two-shot for dialogue exchange showing tension"
+        ]
+      },
+      {
+        "id": "scene-3",
+        "number": 3,
+        "heading": "INT. COFFEE SHOP - BACK ROOM - LATER",
+        "action": "Sarah quietly slips into the employee area while Marcus serves other customers. Storage shelves line the walls. She discovers ledgers with suspicious transactions and photographs of Marcus's family with threatening red X's marked over them.",
+        "dialogue": [
+          {
+            "character": "SARAH",
+            "text": "What have you gotten yourself into, Marcus?",
+            "parenthetical": "to herself, examining evidence"
+          }
+        ],
+        "cameraNotes": [
+          "Tracking shot following Sarah into back room",
+          "Close-up inserts of ledger entries showing large cash transactions",
+          "Extreme close-up on family photos with threatening marks",
+          "Wide shot of Sarah piecing together the evidence"
+        ]
       }
     ],
     "createdAt": "2024-01-15T08:30:00Z",
     "updatedAt": "2024-01-15T08:30:00Z",
-    "runtime": 120
+    "runtime": 180
   },
   {
     "Id": 2,
     "title": "Cooking Class Chaos",
     "topic": "A cooking class goes hilariously wrong",
     "style": "comedy",
+    "writer": "Comedy Central AI",
+    "draft": "Revised Draft",
+    "notes": "Emphasize physical comedy and timing. Add more reaction shots for maximum comedic effect. Consider slow-motion for pasta sauce ceiling hit.",
     "story": "Chef Antoine, a pretentious French chef, is teaching a beginner's cooking class to a group of enthusiastic but completely incompetent students. What starts as a simple pasta-making lesson quickly descends into complete chaos when one student mistakes salt for sugar, another sets the oven on fire, and a third somehow manages to get pasta sauce on the ceiling. As Antoine tries desperately to maintain his composure and salvage the lesson, the students continue to create increasingly ridiculous disasters. Despite the mayhem, everyone ends up having a wonderful time and bonding over their shared culinary catastrophes.",
     "scenes": [
       {
         "id": "scene-1",
         "number": 1,
         "heading": "INT. COOKING STUDIO - DAY",
-        "action": "A pristine cooking studio. CHEF ANTOINE (45, mustache, very French) stands before five eager STUDENTS wearing aprons.",
+        "action": "A pristine, professional cooking studio with gleaming stainless steel surfaces and perfectly organized ingredients. CHEF ANTOINE (45, thin mustache, very French accent, immaculate white chef's coat) stands before five eager STUDENTS of various ages wearing matching red aprons. The kitchen is spotless and ready for perfection.",
         "dialogue": [
           {
             "character": "CHEF ANTOINE",
             "text": "Today, we will create ze perfect pasta. Eet ees simple, no?",
-            "parenthetical": "with supreme confidence"
+            "parenthetical": "with supreme confidence, gesturing grandly"
+          },
+          {
+            "character": "STUDENT 1",
+            "text": "How hard can it be?",
+            "parenthetical": "eagerly"
+          },
+          {
+            "character": "ANTOINE",
+            "text": "Exactement! Even ze children in France can do zis!",
+            "parenthetical": "famous last words"
           }
         ],
-        "cameraNotes": ["Wide shot of pristine kitchen", "Focus on Antoine's confident expression"]
+        "cameraNotes": [
+          "Wide establishing shot of pristine kitchen",
+          "Medium shot of Antoine's confident expression",
+          "Group shot of enthusiastic students",
+          "Close-up on perfectly arranged ingredients"
+        ]
+      },
+      {
+        "id": "scene-2",
+        "number": 2,
+        "heading": "INT. COOKING STUDIO - 20 MINUTES LATER",
+        "action": "The kitchen transformation begins. STUDENT 2 (elderly woman, glasses) mistakes a cup of salt for sugar. STUDENT 3 (teenage boy) somehow gets his apron tangled in the mixer. Flour dusts everything like snow. Antoine's eye begins to twitch.",
+        "dialogue": [
+          {
+            "character": "STUDENT 2",
+            "text": "This sugar tastes funny.",
+            "parenthetical": "after adding salt to sauce"
+          },
+          {
+            "character": "ANTOINE",
+            "text": "Madame, zat was ze... oh, mon Dieu...",
+            "parenthetical": "realizing the mistake, trying to stay calm"
+          },
+          {
+            "character": "STUDENT 3",
+            "text": "Help! I'm stuck to the mixer!",
+            "parenthetical": "being slowly dragged around by apron strings"
+          }
+        ],
+        "cameraNotes": [
+          "Medium shot of salt being poured into sauce",
+          "Close-up on Antoine's twitching eye",
+          "Wide comedy shot of student attached to mixer",
+          "Reaction shots of other students' faces"
+        ]
       },
       {
         "id": "scene-3",
         "number": 3,
-        "heading": "INT. COOKING STUDIO - LATER",
-        "action": "The kitchen is now a disaster zone. Flour everywhere, smoke billowing from the oven, pasta sauce dripping from the ceiling.",
+        "heading": "INT. COOKING STUDIO - DISASTER ZONE",
+        "action": "The kitchen is now a complete disaster zone. Flour coats every surface like a winter wonderland. Smoke billows from the oven where STUDENT 4 has somehow ignited pasta. Pasta sauce drips from the ceiling in slow motion. STUDENT 5 slides across the flour-covered floor. Antoine stands in the center, coat no longer white, mustache askew, holding his head in his hands.",
         "dialogue": [
           {
             "character": "CHEF ANTOINE",
             "text": "Mon Dieu! What 'ave you done to my beautiful kitchen?!",
-            "parenthetical": "horrified, French accent thickening"
+            "parenthetical": "horrified, French accent thickening with stress"
+          },
+          {
+            "character": "STUDENT 4",
+            "text": "The pasta caught fire! Is that normal?",
+            "parenthetical": "innocently, while smoke alarm blares"
+          },
+          {
+            "character": "STUDENT 1",
+            "text": "Look! I made pasta snow angels!",
+            "parenthetical": "lying in flour on the floor"
+          },
+          {
+            "character": "ANTOINE",
+            "text": "Pasta... snow... angels...",
+            "parenthetical": "having a mental breakdown"
           }
         ],
-        "cameraNotes": ["Wide shot showing chaos", "Close-up on Antoine's shocked face"]
+        "cameraNotes": [
+          "Wide shot showing complete kitchen chaos",
+          "Slow-motion shot of pasta sauce hitting ceiling",
+          "Close-up on Antoine's shocked, flour-covered face",
+          "Montage of various disasters happening simultaneously",
+          "Final group shot of everyone laughing despite the mess"
+        ]
       }
     ],
     "createdAt": "2024-01-14T14:22:00Z",
     "updatedAt": "2024-01-14T14:22:00Z",
-    "runtime": 115
+    "runtime": 165
+  },
+  {
+    "Id": 3,
+    "title": "The Last Phone Booth",
+    "topic": "A time traveler gets stuck at a phone booth",
+    "style": "sci-fi",
+    "writer": "Time Travel Productions",
+    "draft": "Final Draft",
+    "notes": "Visual effects needed for time portal. Pay attention to period-appropriate costume changes for different time periods.",
+    "story": "Dr. Elena Vasquez, a quantum physicist, discovers that an old phone booth downtown is actually a temporal gateway. When she tries to use it to prevent a historical disaster, she becomes trapped, bouncing between different time periods each time she hangs up the phone. From the 1950s to the far future, she must figure out the booth's pattern while avoiding changing history too drastically. The key to returning home lies in understanding that some things are meant to happen, and her role is not to change the past, but to ensure the future.",
+    "scenes": [
+      {
+        "id": "scene-1",
+        "number": 1,
+        "heading": "EXT. DOWNTOWN STREET - PRESENT DAY",
+        "action": "A busy modern street with coffee shops and tech stores. In the middle of all this modernity stands an anachronistic red phone booth, looking completely out of place. DR. ELENA VASQUEZ (30s, scientist, curious) approaches with measuring equipment.",
+        "dialogue": [
+          {
+            "character": "ELENA",
+            "text": "Quantum readings are off the charts here.",
+            "parenthetical": "checking her instruments"
+          },
+          {
+            "character": "PASSERBY",
+            "text": "Lady, it's just an old phone booth. They're going to tear it down tomorrow.",
+            "parenthetical": "walking past"
+          }
+        ],
+        "cameraNotes": [
+          "Establishing shot contrasting modern street with vintage phone booth",
+          "Close-up on Elena's scientific equipment showing anomalous readings",
+          "Medium shot of Elena approaching the booth",
+          "Insert shot of demolition notice on booth"
+        ]
+      }
+    ],
+    "createdAt": "2024-01-10T10:15:00Z",
+    "updatedAt": "2024-01-10T10:15:00Z",
+    "runtime": 95
   }
 ]

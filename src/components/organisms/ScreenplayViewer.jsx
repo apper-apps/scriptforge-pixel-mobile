@@ -24,8 +24,11 @@ return (
           <p className="text-sm">Written by ScriptForge AI</p>
           <p className="text-sm">Based on: {script.topic}</p>
           <p className="text-sm">Style: {script.style}</p>
-          <p className="text-sm">Runtime: ~{runtimeData.total} seconds ({Math.floor(runtimeData.total / 60)}:{(runtimeData.total % 60).toString().padStart(2, '0')})</p>
+<p className="text-sm">Runtime: ~{runtimeData.total} seconds ({Math.floor(runtimeData.total / 60)}:{(runtimeData.total % 60).toString().padStart(2, '0')})</p>
           <p className="text-xs text-primary-600">Dialogue: {runtimeData.dialogue}s | Action: {runtimeData.action}s | Transitions: {runtimeData.transitions}s</p>
+          {script.writer && <p className="text-sm">Writer: {script.writer}</p>}
+          {script.draft && <p className="text-sm">Draft: {script.draft}</p>}
+          {script.notes && <p className="text-xs text-primary-600 mt-2 italic">{script.notes}</p>}
         </div>
 
         {/* Story Synopsis */}
@@ -69,12 +72,19 @@ return (
                 </div>
               ))}
 
-              {/* Camera Notes */}
-              {scene.cameraNotes?.map((note, index) => (
-                <div key={index} className="camera-note">
-                  CAMERA: {note}
+{/* Camera Notes */}
+              {scene.cameraNotes?.length > 0 && (
+                <div className="mt-4">
+                  {scene.cameraNotes.map((note, index) => (
+                    <div key={index} className="camera-note">
+                      CAMERA: {note}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
+
+              {/* Scene Break */}
+              <div className="scene-break mt-6 mb-2 border-b border-primary-300"></div>
             </div>
           ))}
         </div>
